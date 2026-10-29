@@ -26,13 +26,13 @@
   }
  
   &__logo {
-    
     height: 32px;
     object-fit: contain;
     
     @include on-tablet{
       padding-left: 24px;
     }
+
     @include on-desktop{
       padding-left: 24px;
     }
@@ -49,6 +49,7 @@
       align-items: center;
       gap: 64px;
     }
+
     @include on-desktop{
       flex-direction: row;
       align-items: center;
@@ -60,7 +61,7 @@
       
       color: $secondary;
       text-decoration: none;
-      font-family: 'Mont-Bold', sans-serif;
+      font-family: Mont-Bold, sans-serif;
       text-transform: uppercase;
       position: relative;
       &:hover {
@@ -82,7 +83,7 @@
     
     color: $secondary;
     text-decoration: none;
-    font-family: 'Mont-Bold', sans-serif;
+    font-family: Mont-Bold, sans-serif;
     text-transform: uppercase;
     }
     &__button{
