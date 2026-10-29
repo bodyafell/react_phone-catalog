@@ -89,14 +89,14 @@ export const Header = () => {
             className={getLinkClass2}
             onClick={closeMenu}
           >
-            <img src={favoritesIcon} alt="Favorites" className="Header-icon" />
+            <img src={favoritesIcon} alt="Favorites" className="Header-iconContainer-item-icon" />
             {favorites.length > 0 && (
               <span className="Header-favoritesCount">{favorites.length}</span>
             )}
           </NavLink>
 
           <NavLink to="/cart" className={getLinkClass2} onClick={closeMenu}>
-            <img src={cartIcon} alt="Cart" className="Header-icon" />
+            <img src={cartIcon} alt="Cart" className="Header-iconContainer-item-icon" />
             {cart.length > 0 && (
               <span className="Header-favoritesCount">{cart.length}</span>
             )}

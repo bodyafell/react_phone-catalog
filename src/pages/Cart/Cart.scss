@@ -52,6 +52,12 @@
         padding: 24px;
       }
 
+       @include on-desktop {
+        display: flex;
+        gap: 24px;
+        padding: 24px;
+      }
+
       &-removeBtn {
         grid-area: remove;
 
@@ -70,6 +76,7 @@
         justify-content: space-between;
         gap: 16px;
         width: 100%;
+        //margin-bottom: 16px;
       }
 
       &-photo {
@@ -77,9 +84,16 @@
         width: 80px;
         height: 80px;
         object-fit: contain;
+        margin-bottom: 16px;
 
         @include on-tablet {
           flex: 0 0 80px;
+          margin-bottom: 0;
+        }
+
+        @include on-desktop {
+          flex: 0 0 80px;
+          margin-bottom: 0;
         }
       }
 
