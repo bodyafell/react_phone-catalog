@@ -5,7 +5,7 @@ import { FavoritesProvider } from './contexts/FavoritesContext';
 import { CartProvider } from './contexts/CartContext';
 
 createRoot(document.getElementById('root') as HTMLElement).render(
-  <BrowserRouter>
+  <BrowserRouter >
     <FavoritesProvider>
       <CartProvider>
         <App />

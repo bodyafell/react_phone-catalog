@@ -31,7 +31,7 @@ export const HomePage: React.FC<Props> = ({ products }) => {
     <div className="HomePage grid">
       <div className="grid--sub">
         <h1 className="HomePage-title hiden">Product Catalog</h1>
-        <h1 className="HomePage-title ">Welcome to Nice Gadgets store!</h1>
+        <h2 className="HomePage-title ">Welcome to Nice Gadgets store!</h2>
       </div>
       <Slider />
       <ProductSlider products={brandNewProducts} title="Brand new models" />
