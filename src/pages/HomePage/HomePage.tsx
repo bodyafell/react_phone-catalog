@@ -4,10 +4,8 @@ import { ProductDetailShort } from '../../types/ProductDetailShort';
 import { useMemo } from 'react';
 import { ProductSlider } from '../../components/ProductsSlider/ProductsSlider';
 import { CategoryCard } from '../../components/CategoryCard/CategoryCard';
-import PhoneCategory from '../../../public/img/category-phones-photo.png';
-import TabletCategory from '../../../public/img/category-tables-photo.png';
-import AccessoriesCat from '../../../public/img/category-accessories-photo.png';
 import { Link } from 'react-router-dom';
+import { getPublicUrl } from '../../utils/publicUrl';
 
 interface Props {
   products: ProductDetailShort[];
@@ -40,21 +38,21 @@ export const HomePage: React.FC<Props> = ({ products }) => {
         <div className="Categories-list grid--sub">
           <Link className="Categories-list-item" to="/phones">
             <CategoryCard
-              imageSrc={PhoneCategory}
+              imageSrc={getPublicUrl('img/category-phones-photo.png')}
               title="Mobile phones"
               amount={phones.filter(a => a.category === 'phones').length}
             />
           </Link>
           <Link className="Categories-list-item" to="/tablets">
             <CategoryCard
-              imageSrc={TabletCategory}
+              imageSrc={getPublicUrl('img/category-tables-photo.png')}
               title="Tablets"
               amount={phones.filter(a => a.category === 'tablets').length}
             />
           </Link>
           <Link className="Categories-list-item" to="/accessories">
             <CategoryCard
-              imageSrc={AccessoriesCat}
+              imageSrc={getPublicUrl('img/category-accessories-photo.png')}
               title="Accessories"
               amount={phones.filter(a => a.category === 'accessories').length}
             />

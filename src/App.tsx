@@ -9,9 +9,10 @@ import { useEffect, useState } from 'react';
 import { ProductPage } from './pages/ProductDetailsPage/ProductDetailsPage';
 import { Favorites } from './pages/Favorites/Favorites';
 import { Cart } from './pages/Cart/Cart';
+import { getPublicUrl } from './utils/publicUrl';
 
 export const getPhones = async (): Promise<ProductDetailShort[]> => {
-  const response = await fetch('/api/products.json');
+  const response = await fetch(getPublicUrl('api/products.json'));
 
   if (!response.ok) {
     throw new Error('Failed to load local products');

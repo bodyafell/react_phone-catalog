@@ -5,6 +5,7 @@ import { ProductDetailShort } from '../../types/ProductDetailShort';
 import { Link } from 'react-router-dom';
 import { useFavorites } from '../../contexts/FavoritesContext';
 import { useCart } from '../../contexts/CartContext';
+import { getPublicUrl } from '../../utils/publicUrl';
 
 interface Props {
   product: ProductDetailShort;
@@ -32,7 +33,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
       <Link to={productPath}>
         <img
           className="ProductCard-photo"
-          src={'/' + image}
+          src={getPublicUrl(image)}
           alt="Product photo"
         />
         <span className="ProductCard-title">{name}</span>

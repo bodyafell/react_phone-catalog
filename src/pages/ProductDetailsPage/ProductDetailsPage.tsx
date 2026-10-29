@@ -11,6 +11,7 @@ import favoritesAddedIcon from '../../assets/icons/favorites_added.png';
 import { ProductSlider } from '../../components/ProductsSlider/ProductsSlider';
 import { useFavorites } from '../../contexts/FavoritesContext';
 import { useCart } from '../../contexts/CartContext';
+import { getPublicUrl } from '../../utils/publicUrl';
 
 interface Props {
   products_list: ProductDetailShort[];
@@ -50,7 +51,7 @@ export const ProductPage: React.FC<Props> = ({ products_list }) => {
     setHasError(false);
     setProducts(undefined);
 
-    fetch(`/api/${category}.json`, { signal: controller.signal })
+    fetch(getPublicUrl(`api/${category}.json`), { signal: controller.signal })
       .then(res => {
         if (!res.ok) {
           throw new Error('Товар не знайдено');
@@ -145,11 +146,9 @@ export const ProductPage: React.FC<Props> = ({ products_list }) => {
 
       <div className="Product-photos-list">
         {productImages?.map((url, idx) => {
-          const imgSrc = url.startsWith('/') ? url : `/${url}`;
-
           return (
             <img
-              src={imgSrc}
+              src={getPublicUrl(url)}
               alt=""
               onClick={() => setCurrentPhoto(idx)}
               key={url}
@@ -167,7 +166,7 @@ export const ProductPage: React.FC<Props> = ({ products_list }) => {
       {imageSrc && (
         <img
           className="Product-photos-current"
-          src={imageSrc.startsWith('/') ? imageSrc : `/${imageSrc}`}
+          src={getPublicUrl(imageSrc)}
           alt={currentProduct?.name}
         />
       )}
